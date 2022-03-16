@@ -12,7 +12,7 @@ def ipcamara():
     i = 1
 
     # Abre la ipcamara
-    video = cv2.VideoCapture('rtsp://admin:conter1234@192.168.1.108:554/')
+    video = cv2.VideoCapture('rtsp://192.168.1.108:554/')
     #video.set(cv2.CAP_PROP_FPS, 1)
     
     # Ret es un boleano que retorna si es que el frame esta disponible o no. 
