@@ -51,7 +51,7 @@ def estado_trafico():
             return resultado_trafico
 
 
-token= "5191407649:AAFMTmCMrcCLyxtv6gqC6tcrs4l71VE_308"
+token= "INSERTA TU TOKEN AQUI"
 bot = telebot.TeleBot(token)
 bot.delete_webhook() #No tocar
 
