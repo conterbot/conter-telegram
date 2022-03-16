@@ -82,11 +82,5 @@ def inline(c):
         bot.send_message(c.message.chat.id, 'Estaremos aquí proximamente!')
     if c.data == 'opcion3':
         bot.send_message(c.message.chat.id, 'Tendremos más opciones dentro de poco!')
-        '''key = types.InlineKeyboardMarkup()
-        but_1 = types.InlineKeyboardButton(text="Rca. Argentina y Mcal. Lopez", callback_data="opcion1")
-        but_2 = types.InlineKeyboardButton(text="Venezuela y Mcal. Lopez", callback_data="opcion2")
-        but_3 = types.InlineKeyboardButton(text="Otras localidades", callback_data="opcion3")
-        key.add(but_1, but_2, but_3)
-        bot.send_message(c.message.chat.id, 'Esto es una prueba', reply_markup=key)'''
 
 bot.infinity_polling()
