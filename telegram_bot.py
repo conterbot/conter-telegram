@@ -55,15 +55,13 @@ token= "5191407649:AAFMTmCMrcCLyxtv6gqC6tcrs4l71VE_308"
 bot = telebot.TeleBot(token)
 bot.delete_webhook() #No tocar
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["ayuda"])
 def inline(message):
-    key = types.InlineKeyboardMarkup()
-    but_1 = types.InlineKeyboardButton(text="Rca. Argentina y Mcal. Lopez", callback_data="opcion1")
-    but_2 = types.InlineKeyboardButton(text="Venezuela y Mcal. Lopez", callback_data="opcion2")
-    but_3 = types.InlineKeyboardButton(text="Otras localidades", callback_data="opcion3")
-    key.add(but_1, but_2, but_3)
-    bot.send_message(message.chat.id, "Hola! Soy ConterBot, un sistema de conteo y reporte del estado del tráfico en tiempo real. \n Elige una ubicacion para continuar", reply_markup=key)
+    bot.send_message(message.chat.id, "Para utilizar Conter y obtener el estado del tráfico, sólo tenés que seleccionar la opción del lugar que necesitás saber dentro del chat, y te proporcionaremos la info en instantes! Estamos trabajando para llegar a más localidades próximamente 🤗")
 
+@bot.message_handler(commands=["opensource"])
+def inline(message):
+    bot.send_message(message.chat.id, "https://github.com/conterbot/conter-telegram")
 
 @bot.callback_query_handler(func=lambda c:True)
 def inline(c):
@@ -80,4 +78,13 @@ def inline(c):
         but_3 = types.InlineKeyboardButton(text="Otras localidades", callback_data="opcion3")
         key.add(but_1, but_2, but_3)
         bot.send_message(c.message.chat.id, 'Esto es una prueba', reply_markup=key)'''
+@bot.message_handler(commands=["start"])
+def inline(message):
+    key = types.InlineKeyboardMarkup()
+    but_1 = types.InlineKeyboardButton(text="Rca. Argentina y Mcal. Lopez", callback_data="opcion1")
+    but_2 = types.InlineKeyboardButton(text="Venezuela y Mcal. Lopez", callback_data="opcion2")
+    but_3 = types.InlineKeyboardButton(text="Otras localidades", callback_data="opcion3")
+    key.add(but_1, but_2, but_3)
+    bot.send_message(message.chat.id, "Hola! Soy ConterBot, un sistema de conteo y reporte del estado del tráfico en tiempo real. \n Elige una ubicacion para continuar", reply_markup=key)
+
 bot.infinity_polling()

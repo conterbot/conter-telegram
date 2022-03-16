@@ -33,7 +33,7 @@ def contador_vehiculos():
             cv2.putText(img, "Vehiculos: " + str(contador_vehiculos), (20, 55), font, 2, (0, 0, 0), 3) #formato del texto que aparece en la imagen.
 
         #cv2.imshow("Vehiculos", img) #para el ejemplo
-        cv2.waitKey(1000)
+        cv2.waitKey(500)
 
     return carpeta_vehiculos_contador
 

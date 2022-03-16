@@ -1,6 +1,6 @@
 from deta import Deta
 from numpy import true_divide
-from estado_trafico import estado_trafico
+from telegram_bot import estado_trafico
 i=1
 while True:
     
